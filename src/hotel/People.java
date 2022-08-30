@@ -3,41 +3,42 @@ package hotel;
 import java.util.Scanner;
 
 public class People {
-    private String hoTen;
-    private String soCMND;
-    private String queQuan;
+    private String fullname;
+    private String ID;
+    private String address;
 
     public People() {
         super();
     }
 
-    public People(String hoTen, String queQuan, String soCMND) {
+    public People(String fullname, String address, String ID) {
         super();
-        this.hoTen = hoTen;
-        this.queQuan = queQuan;
-        this.soCMND = soCMND;
+        this.fullname = fullname;
+        this.address = address;
+        this.ID = ID;
+        
     }
 
-    public String getSoCMND() {
-        return soCMND;
+    public String getID() {
+        return ID;
     }
-    public void setSoCMND(String soCMND) {
-        this.soCMND = soCMND;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
-    public void nhapThongTinKhachTro() {
+    public void inforinput() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập họ tên khách hàng: ");
-        hoTen = scanner.nextLine();
-        System.out.print("Nhập quê quán: ");
-        queQuan = scanner.nextLine();
-        System.out.print("Nhập số chứng minh nhân dân: ");
-        soCMND = scanner.nextLine();
+        System.out.print("Enter customer name: ");
+        fullname = scanner.nextLine();
+        System.out.print("Enter your address: ");
+        address = scanner.nextLine();
+        System.out.print("Enter ID: ");
+        ID = scanner.nextLine();
     }
 
-    public void hienThiThongTinKhachTro() {
-        System.out.println("Họ và tên khách hàng: " + hoTen);
-        System.out.println("Quê quán: " + queQuan);
-        System.out.println("Số chứng minh nhân dân: " + soCMND);
+    public void information() {
+        System.out.println("Enter customer name: " + fullname);
+        System.out.println("Enter your address: " + address);
+        System.out.println("Enter ID: " + ID);
     }
 }

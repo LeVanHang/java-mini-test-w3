@@ -3,49 +3,47 @@ package hotel;
 import java.util.Scanner;
 
 public class Hotel {
-    private int soNgayTro;
-    private String loaiPhong;
-    private double giaPhong;
-    private People nguoi;
+    private int boardingDay;
+    private String type;
+    private double price;
+    private People people;
     public Hotel() {
         super();
     }
-    public Hotel(int soNgayTro, String loaiPhong, double giaPhong, People nguoi) {
+    public Hotel(int boardingDay, String type, double price, People people) {
         super();
-        this.soNgayTro = soNgayTro;
-        this.loaiPhong = loaiPhong;
-        this.giaPhong = giaPhong;
-        this.nguoi = nguoi;
+        this.boardingDay = boardingDay;
+        this.type = type;
+        this.price = price;
+        this.people = people;
     }
 
-    public People getNguoi() {
-        return nguoi;
+    public People getPeople() {
+        return people;
     }
-    public void setNguoi(People nguoi) {
-        this.nguoi = nguoi;
-    }
-    public void nhapThongTinCanQuanLy() {
+
+    public void inforinput() {
         Scanner scanner = new Scanner(System.in);
 
         // nhập thông tin khách trọ
-        nguoi = new People();
-        nguoi.nhapThongTinKhachTro();
+        people = new People();
+        people.inforinput();
 
-        System.out.print("Nhập số ngày trọ: ");
-        soNgayTro = Integer.parseInt(scanner.nextLine());
-        System.out.print("Nhập loại phòng: ");
-        loaiPhong = scanner.nextLine();
-        System.out.print("Nhập giá phòng: ");
-        giaPhong = scanner.nextDouble();
+        System.out.print("Boarding Day: ");
+        boardingDay = Integer.parseInt(scanner.nextLine());
+        System.out.print("Room Type: ");
+        type = scanner.nextLine();
+        System.out.print("Price: ");
+        price = scanner.nextDouble();
     }
 
-    public void hienThiThongTinCanQuanLy() {
-        nguoi.hienThiThongTinKhachTro();
-        System.out.println("Số ngày trọ: " + soNgayTro);
-        System.out.println("Loại phòng: " + loaiPhong);
-        System.out.println("Giá phòng: " + giaPhong);
+    public void information() {
+        people.information();
+        System.out.println("Boarding Day: " + boardingDay);
+        System.out.println("Room Type: " + type);
+        System.out.println("Price: " + price);
     }
-    public double tinhTien() {
-        return soNgayTro * giaPhong;
+    public double billplease() {
+        return boardingDay * price;
     }
 }
